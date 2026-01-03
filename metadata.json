@@ -1,0 +1,7 @@
+{
+  "name": "Oasis Coworking",
+  "description": "A premium coworking space website for Oasis Coworking in Pozuelo de Alarcón, featuring multiple pages for services, spaces, pricing, and contact.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
