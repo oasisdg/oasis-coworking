@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Monitor, Video, ClipboardList, Utensils, Users, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Spaces: React.FC = () => {
   const [activeTab, setActiveTab] = useState('despachos');
@@ -28,11 +29,12 @@ const Spaces: React.FC = () => {
   };
 
   return (
-    <SEO 
-      title="Alquiler Despachos y Salas | Oasis Coworking Pozuelo"
-      description="Elige tu espacio ideal: Despachos privados amueblados, salas de reuniones por horas o cabinas insonorizadas en Avenida de Europa 26."
-    />
     <div className="flex flex-col">
+      <SEO 
+        title="Alquiler Despachos y Salas | Oasis Coworking Pozuelo"
+        description="Elige tu espacio ideal: Despachos privados amueblados, salas de reuniones por horas o cabinas insonorizadas en Avenida de Europa 26."
+      />
+
       {/* Header */}
       <section className="relative h-[400px] flex items-center justify-center text-center px-6">
         <div 
