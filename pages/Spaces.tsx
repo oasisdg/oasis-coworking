@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Monitor, Video, ClipboardList, Utensils, Users, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
@@ -9,8 +8,24 @@ const Spaces: React.FC = () => {
   const tabs = [
     { id: 'despachos', label: 'Despachos Privados' },
     { id: 'salas', label: 'Salas de Reuniones' },
-    { id: 'cabinas', label: 'Cabinas y Terraza' },
+    { id: 'cabinas-terraza', label: 'Cabinas y Terraza' }, // ID corregido para coincidir con la sección
   ];
+
+  const scrollToSection = (id: string) => {
+    setActiveTab(id);
+    const element = document.getElementById(id);
+    if (element) {
+      // Calculamos la posición restando el espacio del menú sticky (aprox 160px)
+      const offset = 160; 
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
 
   return (
     <div className="flex flex-col">
@@ -29,15 +44,15 @@ const Spaces: React.FC = () => {
         </div>
       </section>
 
-      {/* Tabs */}
-      <div className="sticky top-[72px] z-40 bg-white/80 backdrop-blur-md border-b border-[#dbe6e0]">
+      {/* Tabs (Sticky Navigation) */}
+      <div className="sticky top-[72px] z-40 bg-white/90 backdrop-blur-md border-b border-[#dbe6e0] shadow-sm">
         <div className="max-w-7xl mx-auto px-6 flex justify-center">
-          <div className="flex overflow-x-auto no-scrollbar py-2">
+          <div className="flex overflow-x-auto no-scrollbar py-2 gap-4 md:gap-0">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`px-8 py-4 text-sm font-bold transition-all whitespace-nowrap border-b-2 ${
+                onClick={() => scrollToSection(tab.id)}
+                className={`px-6 md:px-8 py-4 text-sm font-bold transition-all whitespace-nowrap border-b-2 ${
                   activeTab === tab.id 
                     ? 'border-[#13ec80] text-[#111814]' 
                     : 'border-transparent text-[#618975] hover:text-[#13ec80]'
@@ -52,8 +67,9 @@ const Spaces: React.FC = () => {
 
       {/* Content */}
       <div className="max-w-7xl mx-auto px-6 py-20 space-y-32">
+        
         {/* Despachos */}
-        <section id="despachos" className={`grid lg:grid-cols-2 gap-16 items-center ${activeTab !== 'despachos' && 'hidden lg:grid'}`}>
+        <section id="despachos" className="grid lg:grid-cols-2 gap-16 items-center scroll-mt-40">
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#13ec80]/10 text-[#13ec80]">
               <ShieldCheck className="w-4 h-4" />
@@ -89,7 +105,7 @@ const Spaces: React.FC = () => {
         </section>
 
         {/* Salas */}
-        <section id="salas" className={`grid lg:grid-cols-2 gap-16 items-center flex-row-reverse ${activeTab !== 'salas' && 'hidden lg:grid'}`}>
+        <section id="salas" className="grid lg:grid-cols-2 gap-16 items-center flex-row-reverse scroll-mt-40">
           <div className="lg:order-2 space-y-6">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-100 text-blue-600">
               <Users className="w-4 h-4" />
@@ -135,8 +151,8 @@ const Spaces: React.FC = () => {
           </div>
         </section>
 
-        {/* Other Spaces */}
-        <section id="cabinas-terraza" className={`grid md:grid-cols-2 gap-8 ${activeTab !== 'cabinas' && 'hidden md:grid'}`}>
+        {/* Other Spaces (Cabinas y Terraza) */}
+        <section id="cabinas-terraza" className="grid md:grid-cols-2 gap-8 scroll-mt-40">
           <div className="bg-white rounded-[32px] overflow-hidden border border-[#dbe6e0] shadow-sm flex flex-col">
             <div className="h-64 overflow-hidden relative">
               <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=2069" className="w-full h-full object-cover" alt="Booths" />
@@ -160,17 +176,4 @@ const Spaces: React.FC = () => {
             <div className="p-8 flex flex-col flex-grow">
               <h3 className="text-2xl font-bold mb-3">Terraza para Eventos</h3>
               <p className="text-[#618975] text-sm leading-relaxed mb-6 flex-grow">
-                Más de 200m² al aire libre para desconectar, hacer networking o celebrar tu próximo evento corporativo. Afterworks cada jueves.
-              </p>
-              <Link to="/contacto" className="text-[#13ec80] font-bold flex items-center gap-2 group">
-                Ver Info Eventos <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      </div>
-    </div>
-  );
-};
-
-export default Spaces;
+                Más de 2
