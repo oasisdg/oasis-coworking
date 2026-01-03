@@ -38,7 +38,7 @@ const Pricing: React.FC = () => {
                 <Monitor className="w-8 h-8 text-gray-300" />
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-5xl font-black">200€</span>
+                <span className="text-5xl font-black">230€</span>
                 <span className="text-[#618975] font-medium">/mes</span>
               </div>
               <p className="text-xs text-[#618975]">Más IVA</p>
@@ -67,7 +67,7 @@ const Pricing: React.FC = () => {
                 <Lock className="w-8 h-8 text-[#13ec80]" />
               </div>
               <div className="flex items-baseline gap-1">
-                <span className="text-5xl font-black">300€</span>
+                <span className="text-5xl font-black">320€</span>
                 <span className="text-[#618975] font-medium">/puesto/mes</span>
               </div>
               <p className="text-xs text-[#618975]">Más IVA. Para equipos de 2 a 10 personas.</p>
