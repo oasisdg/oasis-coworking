@@ -6,6 +6,10 @@ import { Check, CheckCircle, Info, Calendar, Monitor, UserPlus, FileText, Lock, 
 
 const Pricing: React.FC = () => {
   return (
+    <SEO 
+      title="Tarifas y Precios | Oasis Coworking Pozuelo"
+      description="Planes flexibles sin permanencia. Desde pases diarios y bonos de 10 días hasta despachos privados para equipos. Consulta nuestras tarifas."
+    />
     <div className="flex flex-col">
       {/* Hero */}
       <section className="relative h-[480px] flex items-center justify-center p-8 text-center bg-[#102219] overflow-hidden">
