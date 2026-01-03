@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Instagram, Linkedin, Globe } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
@@ -9,6 +8,7 @@ const Footer: React.FC = () => {
     <footer className="bg-white border-t border-[#f0f4f2] pt-16 pb-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          {/* Columna 1: Marca y Redes */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
               <div className="text-[#13ec80] transition-transform group-hover:rotate-12 duration-300">
@@ -19,33 +19,53 @@ const Footer: React.FC = () => {
             <p className="text-[#618975] text-sm leading-relaxed">
               Espacios de trabajo flexibles diseñados para potenciar tu creatividad y bienestar en Pozuelo de Alarcón.
             </p>
-            <div className="flex gap-4">
-              <a href="#" className="p-2 bg-[#f6f8f7] rounded-lg hover:text-[#13ec80] transition-colors"><Globe className="w-4 h-4" /></a>
-              <a href="#" className="p-2 bg-[#f6f8f7] rounded-lg hover:text-[#13ec80] transition-colors"><Mail className="w-4 h-4" /></a>
-              <a href="#" className="p-2 bg-[#f6f8f7] rounded-lg hover:text-[#13ec80] transition-colors"><Instagram className="w-4 h-4" /></a>
+            
+            {/* NUEVOS BOTONES DE REDES SOCIALES */}
+            <div className="flex gap-4 pt-2">
+              <a 
+                href="https://instagram.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-3 bg-[#f6f8f7] rounded-xl hover:bg-[#13ec80] hover:text-[#102219] transition-all group"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="p-3 bg-[#f6f8f7] rounded-xl hover:bg-[#0a66c2] hover:text-white transition-all group"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
             </div>
           </div>
 
+          {/* Columna 2: Espacios */}
           <div>
             <h4 className="font-bold mb-6">Espacios</h4>
             <ul className="space-y-3 text-sm text-[#618975]">
-              <li><Link to="/espacios" className="hover:text-[#13ec80]">Despachos Privados</Link></li>
-              <li><Link to="/espacios" className="hover:text-[#13ec80]">Puestos Flexibles</Link></li>
-              <li><Link to="/espacios" className="hover:text-[#13ec80]">Salas de Reuniones</Link></li>
-              <li><Link to="/espacios" className="hover:text-[#13ec80]">Terraza y Eventos</Link></li>
+              <li><Link to="/espacios" className="hover:text-[#13ec80] transition-colors">Despachos Privados</Link></li>
+              <li><Link to="/espacios" className="hover:text-[#13ec80] transition-colors">Puestos Flexibles</Link></li>
+              <li><Link to="/espacios" className="hover:text-[#13ec80] transition-colors">Salas de Reuniones</Link></li>
+              <li><Link to="/espacios" className="hover:text-[#13ec80] transition-colors">Terraza y Eventos</Link></li>
             </ul>
           </div>
 
+          {/* Columna 3: Compañía */}
           <div>
             <h4 className="font-bold mb-6">Compañía</h4>
             <ul className="space-y-3 text-sm text-[#618975]">
-              <li><Link to="/ventajas" className="hover:text-[#13ec80]">Sobre Nosotros</Link></li>
-              <li><Link to="/" className="hover:text-[#13ec80]">Blog</Link></li>
-              <li><Link to="/contacto" className="hover:text-[#13ec80]">Contacto</Link></li>
-              <li><a href="#" className="hover:text-[#13ec80]">Trabaja con nosotros</a></li>
+              <li><Link to="/ventajas" className="hover:text-[#13ec80] transition-colors">Sobre Nosotros</Link></li>
+              <li><Link to="/" className="hover:text-[#13ec80] transition-colors">Blog</Link></li>
+              <li><Link to="/contacto" className="hover:text-[#13ec80] transition-colors">Contacto</Link></li>
+              <li><a href="#" className="hover:text-[#13ec80] transition-colors">Trabaja con nosotros</a></li>
             </ul>
           </div>
 
+          {/* Columna 4: Contacto */}
           <div>
             <h4 className="font-bold mb-6">Contacto</h4>
             <ul className="space-y-4 text-sm text-[#618975]">
@@ -55,22 +75,23 @@ const Footer: React.FC = () => {
               </li>
               <li className="flex gap-3 items-center">
                 <Phone className="w-5 h-5 text-[#13ec80] shrink-0" />
-                <span>+34 664 258 841</span>
+                <a href="tel:+34664258841" className="hover:text-[#13ec80] transition-colors">+34 664 258 841</a>
               </li>
               <li className="flex gap-3 items-center">
                 <Mail className="w-5 h-5 text-[#13ec80] shrink-0" />
-                <span>hola@oasispozuelo.es</span>
+                <a href="mailto:hola@oasispozuelo.es" className="hover:text-[#13ec80] transition-colors">hola@oasispozuelo.es</a>
               </li>
             </ul>
           </div>
         </div>
 
+        {/* Barra inferior */}
         <div className="pt-8 border-t border-[#f0f4f2] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#618975]">
           <p>© 2026 Oasis Coworking. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-[#13ec80]">Política de Privacidad</a>
-            <a href="#" className="hover:text-[#13ec80]">Términos de Uso</a>
-            <a href="#" className="hover:text-[#13ec80]">Cookies</a>
+            <a href="#" className="hover:text-[#13ec80] transition-colors">Política de Privacidad</a>
+            <a href="#" className="hover:text-[#13ec80] transition-colors">Términos de Uso</a>
+            <a href="#" className="hover:text-[#13ec80] transition-colors">Cookies</a>
           </div>
         </div>
       </div>
