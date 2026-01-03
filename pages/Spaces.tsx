@@ -8,7 +8,7 @@ const Spaces: React.FC = () => {
   const tabs = [
     { id: 'despachos', label: 'Despachos Privados' },
     { id: 'salas', label: 'Salas de Reuniones' },
-    { id: 'cabinas-terraza', label: 'Cabinas y Terraza' }, // ID corregido para coincidir con la sección
+    { id: 'cabinas-terraza', label: 'Cabinas y Terraza' },
   ];
 
   const scrollToSection = (id: string) => {
@@ -176,4 +176,17 @@ const Spaces: React.FC = () => {
             <div className="p-8 flex flex-col flex-grow">
               <h3 className="text-2xl font-bold mb-3">Terraza para Eventos</h3>
               <p className="text-[#618975] text-sm leading-relaxed mb-6 flex-grow">
-                Más de 2
+                Más de 200m² al aire libre para desconectar, hacer networking o celebrar tu próximo evento corporativo. Afterworks cada jueves.
+              </p>
+              <Link to="/contacto" className="text-[#13ec80] font-bold flex items-center gap-2 group">
+                Ver Info Eventos <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  );
+};
+
+export default Spaces;
