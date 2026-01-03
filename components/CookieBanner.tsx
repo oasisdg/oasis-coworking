@@ -39,12 +39,15 @@ const CookieBanner: React.FC = () => {
           >
             Ver Política
           </Link>
+          
+          {/* AQUÍ ESTABA EL ERROR: Ahora cerramos bien el botón */}
           <button 
             onClick={acceptCookies}
             className="bg-[#13ec80] hover:bg-[#10d670] text-[#111814] font-bold py-3 px-8 rounded-xl transition-all shadow-lg hover:scale-105 active:scale-95"
           >
             Aceptar todo
-          </Link>
+          </button>
+          
           <button 
             onClick={() => setIsVisible(false)} 
             className="p-2 text-gray-500 hover:text-white md:hidden"
