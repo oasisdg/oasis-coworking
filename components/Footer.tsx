@@ -7,7 +7,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-white border-t border-[#f0f4f2] pt-16 pb-8 mt-auto">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        {/* Cambiamos a 3 columnas (md:grid-cols-3) para que quede equilibrado */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          
           {/* Columna 1: Marca y Redes */}
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 group">
@@ -16,11 +18,11 @@ const Footer: React.FC = () => {
               </div>
               <span className="text-xl font-bold">Oasis</span>
             </Link>
-            <p className="text-[#618975] text-sm leading-relaxed">
+            <p className="text-[#618975] text-sm leading-relaxed max-w-xs">
               Espacios de trabajo flexibles diseñados para potenciar tu creatividad y bienestar en Pozuelo de Alarcón.
             </p>
             
-            {/* NUEVOS BOTONES DE REDES SOCIALES */}
+            {/* Redes Sociales */}
             <div className="flex gap-4 pt-2">
               <a 
                 href="https://instagram.com" 
@@ -43,9 +45,9 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Columna 2: Espacios */}
+          {/* Columna 2: Espacios (Lo más importante) */}
           <div>
-            <h4 className="font-bold mb-6">Espacios</h4>
+            <h4 className="font-bold mb-6">Nuestros Espacios</h4>
             <ul className="space-y-3 text-sm text-[#618975]">
               <li><Link to="/espacios" className="hover:text-[#13ec80] transition-colors">Despachos Privados</Link></li>
               <li><Link to="/espacios" className="hover:text-[#13ec80] transition-colors">Puestos Flexibles</Link></li>
@@ -54,20 +56,9 @@ const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Columna 3: Compañía */}
+          {/* Columna 3: Contacto Directo */}
           <div>
-            <h4 className="font-bold mb-6">Compañía</h4>
-            <ul className="space-y-3 text-sm text-[#618975]">
-              <li><Link to="/ventajas" className="hover:text-[#13ec80] transition-colors">Sobre Nosotros</Link></li>
-              <li><Link to="/" className="hover:text-[#13ec80] transition-colors">Blog</Link></li>
-              <li><Link to="/contacto" className="hover:text-[#13ec80] transition-colors">Contacto</Link></li>
-              <li><a href="#" className="hover:text-[#13ec80] transition-colors">Trabaja con nosotros</a></li>
-            </ul>
-          </div>
-
-          {/* Columna 4: Contacto */}
-          <div>
-            <h4 className="font-bold mb-6">Contacto</h4>
+            <h4 className="font-bold mb-6">Estamos aquí</h4>
             <ul className="space-y-4 text-sm text-[#618975]">
               <li className="flex gap-3">
                 <MapPin className="w-5 h-5 text-[#13ec80] shrink-0" />
@@ -85,13 +76,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Barra inferior */}
+        {/* Barra inferior legal */}
         <div className="pt-8 border-t border-[#f0f4f2] flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-[#618975]">
           <p>© 2026 Oasis Coworking. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-[#13ec80] transition-colors">Política de Privacidad</a>
-            <a href="#" className="hover:text-[#13ec80] transition-colors">Términos de Uso</a>
-            <a href="#" className="hover:text-[#13ec80] transition-colors">Cookies</a>
+            <Link to="/privacidad" className="hover:text-[#13ec80] transition-colors">Política de Privacidad</Link>
+            <Link to="/cookies" className="hover:text-[#13ec80] transition-colors">Cookies</Link>
           </div>
         </div>
       </div>
