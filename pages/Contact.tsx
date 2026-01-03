@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -47,11 +48,12 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <SEO 
-      title="Contacto y Ubicación | Oasis Coworking Av. Europa 26"
-      description="Ven a visitarnos en el corazón de Pozuelo. Reserva tu tour gratuito hoy mismo o contáctanos por teléfono o email."
-    />
     <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
+      <SEO 
+        title="Contacto y Ubicación | Oasis Coworking Av. Europa 26"
+        description="Ven a visitarnos en el corazón de Pozuelo. Reserva tu tour gratuito hoy mismo o contáctanos por teléfono o email."
+      />
+
       <div className="max-w-3xl mb-16 space-y-4">
         <h1 className="text-5xl font-black leading-tight">Contacto y Reserva</h1>
         <p className="text-[#618975] text-lg md:text-xl leading-relaxed">
