@@ -47,6 +47,10 @@ const Contact: React.FC = () => {
   };
 
   return (
+    <SEO 
+      title="Contacto y Ubicación | Oasis Coworking Av. Europa 26"
+      description="Ven a visitarnos en el corazón de Pozuelo. Reserva tu tour gratuito hoy mismo o contáctanos por teléfono o email."
+    />
     <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
       <div className="max-w-3xl mb-16 space-y-4">
         <h1 className="text-5xl font-black leading-tight">Contacto y Reserva</h1>
