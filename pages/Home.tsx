@@ -1,11 +1,18 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Wifi, Coffee, ParkingCircle, Clock, Star, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO'; // <--- 1. Importamos la herramienta
 
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col">
+      
+      {/* 2. Configuramos el SEO específico de la portada */}
+      <SEO 
+        title="Oasis Coworking Pozuelo | Oficinas y Despachos en Av. Europa"
+        description="Tu espacio de trabajo flexible en Pozuelo. Alquiler de despachos privados, salas de reuniones y puestos fijos con las mejores vistas de Madrid."
+      />
+
       {/* Hero Section */}
       <section className="relative px-6 py-12 md:py-20 max-w-7xl mx-auto w-full">
         <div 
