@@ -1,15 +1,16 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Cloud, Wifi, Sun, Timer, Train, Bus, CheckCircle } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Advantages: React.FC = () => {
   return (
-    <SEO 
-      title="Servicios y Ventajas | Oasis Coworking - Todo Incluido"
-      description="Internet de fibra óptica, café de especialidad, acceso 24/7 y recepción de paquetería. Céntrate en tu trabajo, nosotros nos ocupamos del resto."
-    />
     <div className="flex flex-col">
+      <SEO 
+        title="Servicios y Ventajas | Oasis Coworking - Todo Incluido"
+        description="Internet de fibra óptica, café de especialidad, acceso 24/7 y recepción de paquetería. Céntrate en tu trabajo, nosotros nos ocupamos del resto."
+      />
+
       {/* Hero */}
       <section className="relative h-[600px] flex items-center justify-center p-8 text-center bg-[#102219] overflow-hidden">
         <div 
