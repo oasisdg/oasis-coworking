@@ -28,6 +28,10 @@ const Spaces: React.FC = () => {
   };
 
   return (
+    <SEO 
+      title="Alquiler Despachos y Salas | Oasis Coworking Pozuelo"
+      description="Elige tu espacio ideal: Despachos privados amueblados, salas de reuniones por horas o cabinas insonorizadas en Avenida de Europa 26."
+    />
     <div className="flex flex-col">
       {/* Header */}
       <section className="relative h-[400px] flex items-center justify-center text-center px-6">
