@@ -1,16 +1,16 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
-// Added ArrowRight to the imports
 import { Check, CheckCircle, Info, Calendar, Monitor, UserPlus, FileText, Lock, ArrowRight } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Pricing: React.FC = () => {
   return (
-    <SEO 
-      title="Tarifas y Precios | Oasis Coworking Pozuelo"
-      description="Planes flexibles sin permanencia. Desde pases diarios y bonos de 10 días hasta despachos privados para equipos. Consulta nuestras tarifas."
-    />
     <div className="flex flex-col">
+      <SEO 
+        title="Tarifas y Precios | Oasis Coworking Pozuelo"
+        description="Planes flexibles sin permanencia. Desde pases diarios y bonos de 10 días hasta despachos privados para equipos. Consulta nuestras tarifas."
+      />
+
       {/* Hero */}
       <section className="relative h-[480px] flex items-center justify-center p-8 text-center bg-[#102219] overflow-hidden">
         <div 
