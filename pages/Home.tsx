@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle2, Wifi, Coffee, ParkingCircle, Clock, Star, ArrowRight } from 'lucide-react';
-import SEO from '../components/SEO'; // <--- 1. Importamos la herramienta
+import SEO from '../components/SEO';
 
 const Home: React.FC = () => {
   return (
     <div className="flex flex-col">
       
-      {/* 2. Configuramos el SEO específico de la portada */}
+      {/* Configuramos el SEO específico de la portada */}
       <SEO 
         title="Oasis Coworking Pozuelo | Oficinas y Despachos en Av. Europa"
         description="Tu espacio de trabajo flexible en Pozuelo. Alquiler de despachos privados, salas de reuniones y puestos fijos con las mejores vistas de Madrid."
@@ -132,9 +132,27 @@ const Home: React.FC = () => {
           <h2 className="text-3xl font-bold text-center mb-16">Lo que dicen nuestros coworkers</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: 'Elena M.', role: 'Diseñadora Gráfica', text: 'Desde que mudé mi estudio a Oasis, mi productividad se ha disparado. La luz natural y la terraza son impagables.', img: 'https://i.pravatar.cc/150?u=elena' },
-              { name: 'Carlos R.', role: 'Consultor IT', text: 'El ambiente es muy profesional pero cercano. He hecho contactos valiosos aquí. Las salas de reuniones impresionan.', img: 'https://i.pravatar.cc/150?u=carlos' },
-              { name: 'Sofia L.', role: 'Emprendedora', text: 'La flexibilidad de acceso 24/7 es fundamental para mí. Oasis ofrece calidad premium a un precio muy competitivo.', img: 'https://i.pravatar.cc/150?u=sofia' }
+              { 
+                name: 'Elena M.', 
+                role: 'Diseñadora Gráfica', 
+                text: 'Desde que mudé mi estudio a Oasis, mi productividad se ha disparado. La luz natural y la terraza son impagables.', 
+                // CORREGIDO: Usamos img=32 (Foto de mujer específica)
+                img: 'https://i.pravatar.cc/150?img=32' 
+              },
+              { 
+                name: 'Carlos R.', 
+                role: 'Consultor IT', 
+                text: 'El ambiente es muy profesional pero cercano. He hecho contactos valiosos aquí. Las salas de reuniones impresionan.', 
+                // CORREGIDO: Usamos img=33 (Foto de hombre específica)
+                img: 'https://i.pravatar.cc/150?img=33' 
+              },
+              { 
+                name: 'Sofia L.', 
+                role: 'Emprendedora', 
+                text: 'La flexibilidad de acceso 24/7 es fundamental para mí. Oasis ofrece calidad premium a un precio muy competitivo.', 
+                // CORREGIDO: Usamos img=45 (Foto de mujer específica)
+                img: 'https://i.pravatar.cc/150?img=45' 
+              }
             ].map((t, idx) => (
               <div key={idx} className="bg-white p-8 rounded-3xl shadow-sm space-y-6">
                 <div className="flex gap-1 text-[#13ec80]">
