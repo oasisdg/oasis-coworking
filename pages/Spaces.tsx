@@ -16,7 +16,6 @@ const Spaces: React.FC = () => {
     setActiveTab(id);
     const element = document.getElementById(id);
     if (element) {
-      // Calculamos la posición restando el espacio del menú sticky (aprox 160px)
       const offset = 160; 
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - offset;
@@ -39,6 +38,8 @@ const Spaces: React.FC = () => {
       <section className="relative h-[400px] flex items-center justify-center text-center px-6">
         <div 
           className="absolute inset-0 bg-cover bg-center"
+          role="img"
+          aria-label="Espacio de trabajo compartido moderno en Pozuelo"
           style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("https://images.unsplash.com/photo-1497215842964-222b430dc094?auto=format&fit=crop&q=80&w=2070")` }}
         />
         <div className="relative z-10 max-w-4xl space-y-4">
@@ -98,14 +99,36 @@ const Spaces: React.FC = () => {
             </Link>
           </div>
           <div className="grid grid-cols-2 gap-4 h-[400px]">
+            {/* AQUÍ ESTÁ LA MEJORA DE SEO: ALT TEXTS DESCRIPTIVOS */}
             <div className="col-span-2 rounded-2xl overflow-hidden shadow-lg h-[240px]">
-              <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=2069" className="w-full h-full object-cover" alt="Office" />
+              <img 
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=2069" 
+                className="w-full h-full object-cover" 
+                alt="Despacho privado luminoso en Oasis Coworking Pozuelo" 
+                loading="lazy"
+                width="800"
+                height="400"
+              />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg h-[145px]">
-              <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2074" className="w-full h-full object-cover" alt="Detail" />
+              <img 
+                src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=2074" 
+                className="w-full h-full object-cover" 
+                alt="Mobiliario de oficina ergonómico y moderno" 
+                loading="lazy"
+                width="400"
+                height="300"
+              />
             </div>
             <div className="rounded-2xl overflow-hidden shadow-lg h-[145px]">
-              <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070" className="w-full h-full object-cover" alt="Detail 2" />
+              <img 
+                src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=2070" 
+                className="w-full h-full object-cover" 
+                alt="Detalle de oficina privada con luz natural" 
+                loading="lazy"
+                width="400"
+                height="300"
+              />
             </div>
           </div>
         </section>
@@ -148,7 +171,14 @@ const Spaces: React.FC = () => {
           </div>
           <div className="lg:order-1 relative">
             <div className="aspect-video rounded-[32px] overflow-hidden shadow-2xl">
-              <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80&w=2050" alt="Meeting" className="w-full h-full object-cover" />
+              <img 
+                src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&q=80&w=2050" 
+                alt="Sala de reuniones equipada en Pozuelo de Alarcón" 
+                className="w-full h-full object-cover" 
+                loading="lazy"
+                width="800"
+                height="600"
+              />
             </div>
             <div className="absolute -bottom-8 -right-8 bg-white p-6 rounded-3xl shadow-2xl border border-gray-100 flex flex-col items-center">
               <span className="text-xs text-[#618975] font-bold uppercase">Capacidad</span>
@@ -161,7 +191,12 @@ const Spaces: React.FC = () => {
         <section id="cabinas-terraza" className="grid md:grid-cols-2 gap-8 scroll-mt-40">
           <div className="bg-white rounded-[32px] overflow-hidden border border-[#dbe6e0] shadow-sm flex flex-col">
             <div className="h-64 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=2069" className="w-full h-full object-cover" alt="Booths" />
+              <img 
+                src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=2069" 
+                className="w-full h-full object-cover" 
+                alt="Cabina insonorizada phone booth para llamadas privadas" 
+                loading="lazy"
+              />
               <div className="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Silencio</div>
             </div>
             <div className="p-8 flex flex-col flex-grow">
@@ -176,7 +211,12 @@ const Spaces: React.FC = () => {
           </div>
           <div className="bg-white rounded-[32px] overflow-hidden border border-[#dbe6e0] shadow-sm flex flex-col">
             <div className="h-64 overflow-hidden relative">
-              <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=2070" className="w-full h-full object-cover" alt="Terrace" />
+              <img 
+                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&q=80&w=2070" 
+                className="w-full h-full object-cover" 
+                alt="Terraza para eventos corporativos en Avenida de Europa Pozuelo" 
+                loading="lazy"
+              />
               <div className="absolute top-4 left-4 bg-[#13ec80]/90 backdrop-blur px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest text-[#102219]">Networking</div>
             </div>
             <div className="p-8 flex flex-col flex-grow">
