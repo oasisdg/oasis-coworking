@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MapPin, Phone, Mail, Send, CheckCircle } from 'lucide-react';
+import { MapPin, Mail, Send, CheckCircle } from 'lucide-react'; // Eliminé 'Phone' de las importaciones
 import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
@@ -51,7 +51,7 @@ const Contact: React.FC = () => {
     <div className="max-w-7xl mx-auto px-6 py-12 md:py-20">
       <SEO 
         title="Contacto y Ubicación | Oasis Coworking Av. Europa 26"
-        description="Ven a visitarnos en el corazón de Pozuelo. Reserva tu tour gratuito hoy mismo o contáctanos por teléfono o email."
+        description="Ven a visitarnos en el corazón de Pozuelo. Reserva tu tour gratuito hoy mismo o contáctanos por email."
       />
 
       <div className="max-w-3xl mb-16 space-y-4">
@@ -65,9 +65,9 @@ const Contact: React.FC = () => {
         {/* Info Col */}
         <div className="lg:col-span-5 space-y-8">
           <div className="space-y-4">
+            {/* HEMOS QUITADO EL BLOQUE DE TELÉFONO DE AQUÍ */}
             {[
               { title: 'Nuestra ubicación', desc: 'Avenida de Europa, 26, piso 3\n28224 Pozuelo de Alarcón, Madrid', icon: <MapPin /> },
-              { title: 'Llámanos', desc: 'Lunes a Viernes, 9:00 - 19:00\n+34 664 258 841', icon: <Phone /> },
               { title: 'Escríbenos', desc: 'Respondemos en menos de 24h\nhola@oasispozuelo.es', icon: <Mail /> }
             ].map((item, i) => (
               <div key={i} className="flex gap-6 p-6 bg-white rounded-3xl border border-[#dbe6e0] shadow-sm hover:shadow-md transition-all">
@@ -118,6 +118,7 @@ const Contact: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-sm font-bold ml-1">Teléfono</label>
+                  {/* Mantenemos este campo para que EL CLIENTE te deje su teléfono, aunque tú no muestres el tuyo. El placeholder es genérico. */}
                   <input required name="phone" value={formData.phone} onChange={handleChange} type="tel" placeholder="+34 600 000 000" className="w-full bg-[#f6f8f7] border-transparent rounded-xl py-4 px-6 focus:border-[#13ec80] focus:ring-0 transition-all" />
                 </div>
                 <div className="space-y-2">
