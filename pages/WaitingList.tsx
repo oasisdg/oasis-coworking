@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Check, Calendar, Gift, Send, Loader2 } from 'lucide-react';
+import { Check, Calendar, Gift, Send } from 'lucide-react';
 import SEO from '../components/SEO';
 
 const WaitingList: React.FC = () => {
@@ -7,7 +7,7 @@ const WaitingList: React.FC = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    phone: '', // Pedimos el teléfono del cliente para llamarle tú a él
+    phone: '',
     interest: 'Despacho Privado',
     needs: '',
     privacy: false
@@ -65,7 +65,6 @@ const WaitingList: React.FC = () => {
 
       {/* Left: Visual & Value */}
       <div className="lg:w-1/2 bg-[#102219] text-white p-8 lg:p-20 flex flex-col justify-center relative overflow-hidden">
-        {/* Background Image Overlay */}
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-30"
           style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2069")' }}
