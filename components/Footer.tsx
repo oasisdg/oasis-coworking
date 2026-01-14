@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Instagram, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Instagram, Linkedin } from 'lucide-react';
 import Logo from './Logo';
 
 const Footer: React.FC = () => {
@@ -64,10 +64,7 @@ const Footer: React.FC = () => {
                 <MapPin className="w-5 h-5 text-[#13ec80] shrink-0" />
                 <span>Av. de Europa, 26, piso 3<br />28224 Pozuelo de Alarcón, Madrid</span>
               </li>
-              <li className="flex gap-3 items-center">
-                <Phone className="w-5 h-5 text-[#13ec80] shrink-0" />
-                <a href="tel:+34664258841" className="hover:text-[#13ec80] transition-colors">+34 664 258 841</a>
-              </li>
+              {/* Teléfono eliminado de aquí */}
               <li className="flex gap-3 items-center">
                 <Mail className="w-5 h-5 text-[#13ec80] shrink-0" />
                 <a href="mailto:hola@oasispozuelo.es" className="hover:text-[#13ec80] transition-colors">hola@oasispozuelo.es</a>
