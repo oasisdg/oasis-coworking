@@ -16,6 +16,7 @@ import WaitingList from './pages/WaitingList'; // <--- NUEVO
 import PrivacyPage from './pages/PrivacyPage';
 import CookiesPage from './pages/CookiesPage';
 
+// Scroll to top on route change
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   React.useEffect(() => {
@@ -30,7 +31,7 @@ const App: React.FC = () => {
       <Router>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-[#f6f8f7] text-[#111814]">
-          <AnnouncementBar /> {/* <--- BARRA DE AVISO */}
+          <AnnouncementBar /> {/* <--- BARRA AVISO APERTURA */}
           <Navbar />
           
           <main className="flex-grow">
