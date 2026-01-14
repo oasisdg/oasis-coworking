@@ -1,5 +1,6 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+// CAMBIO 1: Importamos BrowserRouter en lugar de HashRouter
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -7,8 +8,7 @@ import CookieBanner from './components/CookieBanner';
 import AnnouncementBar from './components/AnnouncementBar';
 import WelcomeModal from './components/WelcomeModal';
 
-// IMPORTACIONES DE PÁGINAS (Aquí es donde suele fallar si falta Home)
-import Home from './pages/Home';  // <--- ¡ESTA ES LA LÍNEA CLAVE QUE FALTABA!
+import Home from './pages/Home';
 import Spaces from './pages/Spaces';
 import Advantages from './pages/Advantages';
 import Pricing from './pages/Pricing';
@@ -28,6 +28,7 @@ const ScrollToTop = () => {
 const App: React.FC = () => {
   return (
     <HelmetProvider>
+      {/* CAMBIO 2: Usamos Router normal (BrowserRouter) */}
       <Router>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-[#f6f8f7] text-[#111814]">
@@ -42,8 +43,6 @@ const App: React.FC = () => {
               <Route path="/precios" element={<Pricing />} />
               <Route path="/contacto" element={<Contact />} />
               <Route path="/lista-espera" element={<WaitingList />} />
-              
-              {/* Rutas Legales */}
               <Route path="/privacidad" element={<PrivacyPage />} />
               <Route path="/cookies" element={<CookiesPage />} />
             </Routes>
