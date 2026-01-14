@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   return (
     <div className="flex flex-col">
       
-      {/* Configuramos el SEO específico de la portada */}
+      {/* SEO */}
       <SEO 
         title="Oasis Coworking Pozuelo | Oficinas y Despachos en Av. Europa"
         description="Tu espacio de trabajo flexible en Pozuelo. Alquiler de despachos privados, salas de reuniones y puestos fijos con las mejores vistas de Madrid."
@@ -26,14 +26,20 @@ const Home: React.FC = () => {
             <p className="text-gray-100 text-lg md:text-xl font-medium max-w-2xl mx-auto">
               Despachos privados, salas de reuniones y una terraza única para que tus ideas fluyan en el corazón de Pozuelo.
             </p>
+            
+            {/* BOTONES ACTUALIZADOS A LISTA DE ESPERA */}
             <div className="flex flex-wrap gap-4 justify-center pt-4">
-              <Link to="/espacios" className="bg-[#13ec80] text-[#102219] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#0fd671] transition-transform hover:scale-105 active:scale-95 shadow-xl shadow-[#13ec80]/20">
-                Explorar Espacios
+              <Link to="/lista-espera" className="bg-[#13ec80] text-[#102219] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#0fd671] transition-transform hover:scale-105 active:scale-95 shadow-xl shadow-[#13ec80]/20 flex items-center gap-2">
+                Unirme a la Lista de Espera <ArrowRight className="w-5 h-5"/>
               </Link>
-              <Link to="/contacto" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
-                Reservar Visita
+              <Link to="/espacios" className="bg-white/10 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-all">
+                Ver Espacios
               </Link>
             </div>
+            <p className="text-[#13ec80] text-sm font-bold uppercase tracking-widest animate-pulse">
+              ¡Apertura 15 de Febrero! Plazas Limitadas
+            </p>
+
           </div>
         </div>
       </section>
@@ -136,21 +142,18 @@ const Home: React.FC = () => {
                 name: 'Elena M.', 
                 role: 'Diseñadora Gráfica', 
                 text: 'Desde que mudé mi estudio a Oasis, mi productividad se ha disparado. La luz natural y la terraza son impagables.', 
-                // CORREGIDO: Usamos img=32 (Foto de mujer específica)
                 img: 'https://i.pravatar.cc/150?img=32' 
               },
               { 
                 name: 'Carlos R.', 
                 role: 'Consultor IT', 
                 text: 'El ambiente es muy profesional pero cercano. He hecho contactos valiosos aquí. Las salas de reuniones impresionan.', 
-                // CORREGIDO: Usamos img=33 (Foto de hombre específica)
                 img: 'https://i.pravatar.cc/150?img=33' 
               },
               { 
                 name: 'Sofia L.', 
                 role: 'Emprendedora', 
                 text: 'La flexibilidad de acceso 24/7 es fundamental para mí. Oasis ofrece calidad premium a un precio muy competitivo.', 
-                // CORREGIDO: Usamos img=45 (Foto de mujer específica)
                 img: 'https://i.pravatar.cc/150?img=45' 
               }
             ].map((t, idx) => (
