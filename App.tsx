@@ -5,9 +5,17 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import CookieBanner from './components/CookieBanner';
 import AnnouncementBar from './components/AnnouncementBar';
-import WelcomeModal from './components/WelcomeModal'; // <--- IMPORTAR AQUÍ
+import WelcomeModal from './components/WelcomeModal';
 
-// ... (Resto de imports de páginas igual que antes) ...
+// IMPORTACIONES DE PÁGINAS (Aquí es donde suele fallar si falta Home)
+import Home from './pages/Home';  // <--- ¡ESTA ES LA LÍNEA CLAVE QUE FALTABA!
+import Spaces from './pages/Spaces';
+import Advantages from './pages/Advantages';
+import Pricing from './pages/Pricing';
+import Contact from './pages/Contact';
+import WaitingList from './pages/WaitingList';
+import PrivacyPage from './pages/PrivacyPage';
+import CookiesPage from './pages/CookiesPage';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -28,13 +36,14 @@ const App: React.FC = () => {
           
           <main className="flex-grow">
             <Routes>
-               {/* ... (Tus rutas siguen igual) ... */}
               <Route path="/" element={<Home />} />
               <Route path="/espacios" element={<Spaces />} />
               <Route path="/ventajas" element={<Advantages />} />
               <Route path="/precios" element={<Pricing />} />
               <Route path="/contacto" element={<Contact />} />
               <Route path="/lista-espera" element={<WaitingList />} />
+              
+              {/* Rutas Legales */}
               <Route path="/privacidad" element={<PrivacyPage />} />
               <Route path="/cookies" element={<CookiesPage />} />
             </Routes>
@@ -42,7 +51,7 @@ const App: React.FC = () => {
 
           <Footer />
           <CookieBanner />
-          <WelcomeModal /> {/* <--- AÑADIR EL POPUP AQUÍ AL FINAL */}
+          <WelcomeModal />
         </div>
       </Router>
     </HelmetProvider>
